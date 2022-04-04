@@ -38,7 +38,7 @@ export default function Footer() {
             <a href="https://t.me/+GwfL6ttfuBljMjhk">
               <img src={telegram} alt="telegram" />
             </a>
-            <a href="/">
+            <a href="https://www.facebook.com/Stanrute-100648989062979/">
               <img src={facebook} alt="facebook" />
             </a>
           </div>

@@ -7,29 +7,29 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [menuItems, setMenuItems] = useState([
     {
-      name: "Introduction",
+      name: "Introducing Stanrute Academy",
       index: 0,
     },
-    {
-      name: "The metaverse",
-      index: 0,
-    },
-    {
-      name: "Technology and tools",
-      index: 0,
-    },
-    {
-      name: "Use cases",
-      index: 0,
-    },
-    {
-      name: "The battle of the FAANG to lead the new revolution",
-      index: 0,
-    },
-    {
-      name: "Becoming a web3 developer",
-      index: 0,
-    },
+    // {
+    //   name: "The metaverse",
+    //   index: 0,
+    // },
+    // {
+    //   name: "Technology and tools",
+    //   index: 0,
+    // },
+    // {
+    //   name: "Use cases",
+    //   index: 0,
+    // },
+    // {
+    //   name: "The battle of the FAANG to lead the new revolution",
+    //   index: 0,
+    // },
+    // {
+    //   name: "Becoming a web3 developer",
+    //   index: 0,
+    // },
   ]);
   return (
     <section>

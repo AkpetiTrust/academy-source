@@ -6,7 +6,7 @@ import Menu from "./Menu/Menu";
 function Nav({ setActiveIndex, menuItems }) {
   return (
     <nav className={style.nav}>
-      <a href="/">
+      <a href="https://stanrute.com/academy">
         <img src={image} alt="logo" />
       </a>
       <Menu setActiveIndex={setActiveIndex} menuItems={menuItems} />
