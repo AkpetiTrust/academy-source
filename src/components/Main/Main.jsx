@@ -9,9 +9,32 @@ function Main({ activeIndex, setActiveIndex, menuItems }) {
   };
 
   useEffect(() => {
-    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`, options)
-      .then((res) => res.json())
-      .then((result) => {
+    fetch(`https://stanrute-blog.herokuapp.com/${feedUrl}`, options)
+      .then((res) => res.text())
+      .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then((dom) => {
+        let domItems = dom.querySelectorAll("item");
+        let result = { items: [] };
+        domItems.forEach((item) => {
+          let title = item.querySelector("title").textContent;
+          let pubDate = item.querySelector("pubDate").textContent;
+          let content = item
+            .getElementsByTagNameNS("*", "encoded")
+            .item(0).textContent;
+
+          // Magic numbers to get thumbnail
+          let thumbnail = content.slice(
+            content.indexOf("src=") + 5,
+            content.indexOf("png") + 3
+          );
+
+          result.items.push({
+            title,
+            pubDate,
+            content,
+            thumbnail,
+          });
+        });
         let items = [];
         result.items.forEach((item, i) => {
           items.push({
