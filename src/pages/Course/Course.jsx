@@ -1,9 +1,9 @@
 import { React, useState } from "react";
-import Nav from "./components/Nav/Nav";
-import Main from "./components/Main/Main";
-import Footer from "./components/Footer/Footer";
+import Nav from "../../components/Nav/Nav";
+import Main from "../../components/Main/Main";
+import Footer from "../../components/Footer/Footer";
 
-function App() {
+function Course() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [menuItems, setMenuItems] = useState([
     {
@@ -44,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default Course;

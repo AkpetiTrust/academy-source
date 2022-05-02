@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import style from "./index.module.css";
+import { Link } from "react-router-dom";
 
 function Main({ activeIndex, setActiveIndex, menuItems }) {
   const [topics, setTopics] = useState([]);
@@ -58,7 +59,7 @@ function Main({ activeIndex, setActiveIndex, menuItems }) {
             dangerouslySetInnerHTML={{ __html: topics[activeIndex].content }}
           ></section>
           <section className={style.btn_group}>
-            <a href="https://stanrute.com/academy" className={style.btn}>
+            <Link to="/" className={style.btn}>
               <svg
                 width="20"
                 height="20"
@@ -74,7 +75,7 @@ function Main({ activeIndex, setActiveIndex, menuItems }) {
                 />
               </svg>
               Go Back
-            </a>
+            </Link>
             {menuItems.length > 1 && (
               <button className={style.btn}>
                 {menuItems[activeIndex + 1].name}

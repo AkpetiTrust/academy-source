@@ -1,0 +1,107 @@
+.card {
+  all: unset;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.05);
+          box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 300px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.card .status {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ffc01e;
+  font-weight: 700;
+  background-color: #fff3d2;
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: unset;
+}
+
+.card .card_image_container {
+  width: 100%;
+}
+
+.card .card_image_container img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card .card_talk {
+  padding: 10px 30px;
+}
+
+.card .card_talk :global(.text-primary) {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #00422e;
+  line-height: 1em;
+  margin-bottom: 10px;
+}
+
+.card .card_talk img {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.card .card_talk .label {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.card .card_talk .btn_group {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .card_talk .btn_group :global(.btn) {
+  cursor: unset;
+  padding: 1px 13px;
+  border-radius: 50px;
+}
+
+.card .card_talk .btn_group .btn_blue {
+  color: #fff;
+  background-color: #0067df;
+}
+
+.card .card_talk .btn_group .btn_yellow {
+  color: #000;
+  background-color: #ffc01e;
+}
+
+.card .card_talk .btn_group .btn_green {
+  color: #fff;
+  background-color: #009153;
+}
+
+@media screen and (max-width: 400px) {
+  .card .card_talk .btn_group :global(.btn) {
+    padding: 1px 10px;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card .card_talk :global(.text-primary) {
+    font-size: 1.1em;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */
