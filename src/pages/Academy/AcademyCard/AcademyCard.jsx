@@ -1,26 +1,29 @@
 import React from "react";
 import style from "./index.module.css";
-import image from "./card-image.png";
+import fallBackImage from "./card-image.png";
 import { Link } from "react-router-dom";
-import rating from "./Rating.svg";
 
-export default function AcademyCard() {
+export default function AcademyCard({ course }) {
+  const { title, image, highlights, _id } = course;
+
   return (
-    <Link to="/introduction" className={style.card}>
-      {/* <button className={`btn ${style.status}`} disabled>
-        Upcoming Class
-      </button> */}
+    <Link to="/course" state={{ course }} className={style.card}>
       <div className={style.card_image_container}>
-        <img src={image} alt="Stanrute Academy" />
+        <img src={image || fallBackImage} alt="Stanrute Academy" />
       </div>
       <div className={style.card_talk}>
-        <p className="text-primary">Introducing Stanrute Academy</p>
-        {/* <img src={rating} alt="rating" /> */}
+        <p className="text-primary">{title}</p>
         <p className={style.label}>Highlights:</p>
         <div className={style.btn_group}>
-          <button className={`btn ${style.btn_blue}`}>Concepts</button>
-          <button className={`btn ${style.btn_yellow}`}>Strategies</button>
-          <button className={`btn ${style.btn_green}`}>Trade</button>
+          {JSON.parse(highlights).map((highlight) => (
+            <button
+              key={highlight.text}
+              style={{ color: "#fff", backgroundColor: highlight.color.dark }}
+              className={`${style.btn}`}
+            >
+              {highlight.text}
+            </button>
+          ))}
         </div>
       </div>
     </Link>

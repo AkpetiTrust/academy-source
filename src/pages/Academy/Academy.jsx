@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./academy.module.css";
 import logo from "./Stanrute.png";
 import Navbar from "../../components/Navbar/Navbar";
@@ -7,6 +7,17 @@ import { Link } from "react-router-dom";
 import AcademyCard from "./AcademyCard/AcademyCard";
 
 export default function Academy() {
+  const [courses, setCourses] = useState([]);
+  const apiUrl = "http://localhost:4000";
+
+  useEffect(() => {
+    fetch(`${apiUrl}/courses`)
+      .then((res) => res.json())
+      .then(({ content }) => {
+        setCourses(content);
+      });
+  }, []);
+
   return (
     <section className={style.academy}>
       <Navbar textColor="#00422E">
@@ -33,9 +44,9 @@ export default function Academy() {
           We have free and paid resources that are curated by industry experts
         </p>
         <div className={style.card_section}>
-          <div>
-            <AcademyCard />
-          </div>
+          {courses.map((course) => (
+            <AcademyCard course={course} key={course._id} />
+          ))}
         </div>
       </main>
       <Footer />
